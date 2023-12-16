@@ -13,4 +13,3 @@
 export RUNTIME_VERSION=gnustep-2.0
 export CXXFLAGS="-std=c++11"
 gmake install
-cp /usr/local/GNUstep/Local/Applications/SimpleTextEditor.app/Resources/SimpleTextEditor.desktop /usr/local/share/applications/SimpleTextEditor.desktop
