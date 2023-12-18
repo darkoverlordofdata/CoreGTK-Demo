@@ -1,8 +1,7 @@
 /*
- * SimpleTextEditor.h
- * This file is part of SimpleTextEditor
+ * App2.h
  *
- * Copyright (C) 2015 - Tyler Burton
+ * Copyright (C) 2023 darkoverlordofdata
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
