@@ -1,56 +1,32 @@
-# simpletexteditor
+# CoreGTK Demo
 
-@see https://github.com/coregtk/coregtk
+Gnustep is great! Up to a point. The gnustep ux is different. I just don't get the big icon. It seems like clutter, but I have to display it because if I minimize the window, then I can locate it again because the way I normally do this doesn't work with gnustep apps. Yeah. And nothing matches the desktop theme. There are gnustep themes, but nothing that matches existing desktops well. And the icon on docs and taskbars is often just a generic app icon.  
 
-this is the example from CoreGTK, with gnustep oriented build.
+As an alternative, there is CoreGTK, a GTK wrapper adapter for Objective-C that corrects all of this. It replaces AppKit. You'll also write some different code. But you still have Foundation, so your business logic should stay the same. 
 
-for a similar project using ObjFW see https://github.com/ObjGTK/ObjGTK3
-
-## changes
-
-icon: https://www.flaticon.com/free-icon/text-editor_4400968
-
-Switched to GNUmakefile
-
-simplified header:
-```objective-c
-#import <CoreGTK/CoreGTK.h>
+## help
+make says 
 ```
-
-glade ui is now stored in the application bundle:
-```objective-c
-		NSString *icon = [NSString stringWithFormat:@"%@/%@", 
-            [[NSBundle mainBundle] bundlePath], 
-            @"Resources/SimpleTextEditor.png"]; 
-		GError* err = NULL;
-		[CGTKWindow setDefaultIconFromFileWithFilename:icon andErr:&err];
-
-		NSString *filename = [NSString stringWithFormat:@"%@/%@", 
-            [[NSBundle mainBundle] bundlePath], 
-            @"Resources/gui.glade"]; 
-
-		if(![builder addFromFileWithFilename:filename andErr:NULL])
+make: no target to make.
 ```
-
-## build - FreeBSD
+Are you on FreeBSD?
 ```
+sudo pkg install gmake
 gmake
-openapp ./SimpleTextEditor
 ```
-## install - FreeBSD
+
+![alt App1](https://github.com/darkoverlordofdata/CoreGTK-Demo/blob/main/App1/2023-12-17-173931_204x130_scrot.png?raw=true)
 ```
-sudo su
-password:
-sh install.sh
-cp /usr/local/GNUstep/Local/Applications/SimpleTextEditor.app/Resources/SimpleTextEditor.desktop /usr/local/share/applications/SimpleTextEditor.desktop
-exit
-openapp SimpleTextEditor
+cd App1
+make
+openapp ./App1
 ```
-or find in the menu
+![alt App2](https://github.com/darkoverlordofdata/CoreGTK-Demo/blob/main/App2/2023-12-17-174015_204x130_scrot.png?raw=true)
+```
+cd App2
+make
+openapp ./App2
+```
+![alt SimpleTextEditor](https://github.com/darkoverlordofdata/CoreGTK-Demo/blob/main/SimpleTextEditor/2023-12-16-155117_1920x1080_scrot.png?raw=true)
 
-![alt App1](https://github.com/darkoverlordofdata/SimpleTextEditor/blob/main/App1/2023-12-17-173931_204x130_scrot.png?raw=true)
-
-![alt App2](https://github.com/darkoverlordofdata/SimpleTextEditor/blob/main/App2/2023-12-17-174015_204x130_scrot.png?raw=true)
-
-![alt SimpleTextEditor](https://github.com/darkoverlordofdata/SimpleTextEditor/blob/main/2023-12-16-155117_1920x1080_scrot.png?raw=true)
 

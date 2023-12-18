@@ -12,6 +12,11 @@ icon: https://www.flaticon.com/free-icon/text-editor_4400968
 
 Switched to GNUmakefile
 
+simplified header:
+```objective-c
+#import <CoreGTK/CoreGTK.h>
+```
+
 glade ui is now stored in the application bundle:
 ```objective-c
 		NSString *icon = [NSString stringWithFormat:@"%@/%@", 
@@ -42,7 +47,4 @@ exit
 openapp SimpleTextEditor
 ```
 or find in the menu
-
-![alt text](https://github.com/darkoverlordofdata/SimpleTextEditor/blob/main/2023-12-16-155117_1920x1080_scrot.png?raw=true)
-
 
