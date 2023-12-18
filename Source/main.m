@@ -23,8 +23,8 @@
  * Objective-C imports
  */
 #import <Foundation/Foundation.h>
+#import <CoreGTK/CoreGTK.h>
 
-#import "CoreGTK/CGTK.h"
 #import "SimpleTextEditor.h"
 
 int main(int argc, char *argv[])

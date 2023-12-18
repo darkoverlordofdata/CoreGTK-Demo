@@ -1,5 +1,5 @@
 /*
- * MultiDialog.h
+ * main.m
  * This file is part of SimpleTextEditor
  *
  * Copyright (C) 2015 - Tyler Burton
@@ -22,13 +22,20 @@
 /*
  * Objective-C imports
  */
+#import <Foundation/Foundation.h>
 #import <CoreGTK/CoreGTK.h>
- 
-@interface MultiDialog : NSObject
-{
+
+#import "App2.h"
+
+int main(int argc, char *argv[])
+{	
+	@autoreleasepool {
+		[CGTK autoInitWithArgc:argc andArgv:argv];
+		
+		App2 *editor = [[App2 alloc] init];
+		[editor show];
+		[CGTK main];
+
+	}
+	return 0;
 }
-
-+(NSString *)presentOpenDialog;
-+(NSString *)presentSaveDialog;
-
-@end

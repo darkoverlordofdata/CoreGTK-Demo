@@ -1,5 +1,5 @@
 /*
- * MultiDialog.h
+ * main.m
  * This file is part of SimpleTextEditor
  *
  * Copyright (C) 2015 - Tyler Burton
@@ -22,13 +22,39 @@
 /*
  * Objective-C imports
  */
+#import <Foundation/Foundation.h>
 #import <CoreGTK/CoreGTK.h>
- 
-@interface MultiDialog : NSObject
-{
+#import "App1.h"
+
+int main(int argc, char *argv[])
+{	
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+
+	/* 
+	 * This is called in all GTK applications. Arguments are parsed
+	 * from the command line and are returned to the application. 
+	 */
+	[CGTK autoInitWithArgc:argc andArgv:argv];
+	
+	// Create and display editor
+	App1 *editor = [[App1 alloc] init];
+	
+	// Check for error
+	if(editor == nil)
+	{
+		return 1;
+	}
+	
+	// Show the window	
+	[editor show];
+	
+	// Start GTK+ loop
+	[CGTK main];
+
+	// Release allocated memory
+	[editor release];
+	[pool release];
+
+	// Return success
+	return 0;
 }
-
-+(NSString *)presentOpenDialog;
-+(NSString *)presentSaveDialog;
-
-@end

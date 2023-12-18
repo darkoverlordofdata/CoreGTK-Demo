@@ -22,17 +22,7 @@
 /*
  * Objective-C imports
  */
-#import "CoreGTK/CGTKBuilder.h"
-
-#import "CoreGTK/CGTKBaseBuilder.h"
-#import "CoreGTK/CGTKBuilder.h"
-#import "CoreGTK/CGTKButton.h"
-#import "CoreGTK/CGTKCallbackData.h"
-#import "CoreGTK/CGTK.h"
-#import "CoreGTK/CGTKSignalConnector.h"
-#import "CoreGTK/CGTKTextView.h"
-#import "CoreGTK/CGTKWindow.h"
-
+#import <CoreGTK/CoreGTK.h>
 #import "MultiDialog.h"
 
 @interface SimpleTextEditor : NSObject

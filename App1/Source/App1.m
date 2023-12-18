@@ -1,5 +1,5 @@
 /*
- * MultiDialog.h
+ * SimpleTextEditor.m
  * This file is part of SimpleTextEditor
  *
  * Copyright (C) 2015 - Tyler Burton
@@ -22,13 +22,44 @@
 /*
  * Objective-C imports
  */
-#import <CoreGTK/CoreGTK.h>
- 
-@interface MultiDialog : NSObject
+#import "App1.h"
+
+@implementation App1
+
+-(id)init
 {
+	self = [super init];
+	
+	if(self)
+	{
+		window = [[CGTKWindow alloc]init:GTK_WINDOW_TOPLEVEL];
+	// Here we connect the "destroy" event to a signal handler in the HelloWorld class
+		[CGTKSignalConnector connectGpointer:[window WIDGET] withSignal:@"destroy" 
+		toTarget:[CGTK class] withSelector:@selector(mainQuit) andData:NULL];
+		
+
+		[window setTitle:@"Window"];
+		[window setDefaultSizeWithWidth:200 andHeight:100];
+
+		NSString *icon = [NSString stringWithFormat:@"%@/%@", 
+            [[NSBundle mainBundle] bundlePath], 
+            @"Resources/App1.png"]; 
+		[CGTKWindow setDefaultIconFromFileWithFilename:icon andErr:NULL];
+	}
+	
+	return self;
 }
 
-+(NSString *)presentOpenDialog;
-+(NSString *)presentSaveDialog;
+-(void)show
+{
+	[window showAll];
+}
+
+
+-(void)dealloc
+{
+	[window release];
+	[super dealloc];
+}
 
 @end

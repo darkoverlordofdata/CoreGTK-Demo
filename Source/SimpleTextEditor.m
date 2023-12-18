@@ -63,8 +63,9 @@
 		NSString *icon = [NSString stringWithFormat:@"%@/%@", 
             [[NSBundle mainBundle] bundlePath], 
             @"Resources/SimpleTextEditor.png"]; 
-		GError* err = NULL;
-		[CGTKWindow setDefaultIconFromFileWithFilename:icon andErr:&err];
+		// GError* err = NULL;
+		// [CGTKWindow setDefaultIconFromFileWithFilename:icon andErr:&err];
+		[CGTKWindow setDefaultIconFromFileWithFilename:icon andErr:NULL];
 	}
 	
 	return self;

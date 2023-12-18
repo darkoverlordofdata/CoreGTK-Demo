@@ -1,5 +1,5 @@
 /*
- * MultiDialog.h
+ * SimpleTextEditor.h
  * This file is part of SimpleTextEditor
  *
  * Copyright (C) 2015 - Tyler Burton
@@ -23,12 +23,12 @@
  * Objective-C imports
  */
 #import <CoreGTK/CoreGTK.h>
- 
-@interface MultiDialog : NSObject
+
+@interface App1 : NSObject
 {
+	CGTKWindow *window;
 }
 
-+(NSString *)presentOpenDialog;
-+(NSString *)presentSaveDialog;
+-(void)show;
 
 @end

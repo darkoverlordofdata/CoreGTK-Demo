@@ -1,0 +1,17 @@
+{
+    ApplicationDescription = "Simple Text Editor";
+    ApplicationIcon = "App1.png";
+    ApplicationName = App1;
+    ApplicationRelease = "1.0.0";
+    Authors = (
+	"darkoverlordofdata"
+    );
+    Copyright = "Copyright (C) 2023 LGPL";
+    CopyrightDescription = "GNU LESSER GENERAL PUBLIC LICENSE Version 2.1";
+    FullVersionID = "1.0.0";
+    NSExecutable = App1;
+    NSIcon = "App1.png";
+    NSPrincipalClass = NSApplication;
+    NSRole = Application;
+    URL = "http://darkoverlordofdata.com/application/";
+}
