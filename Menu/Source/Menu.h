@@ -34,14 +34,10 @@
 	CGTKMenuItem *gameMenu_setup;
 	CGTKMenuItem *gameMenu_options;
 	CGTKMenuItem *gameMenu_quit;
-
 	CGTKMenu *gameHelp;
 	CGTKMenuItem *gameHelp_help;
 	CGTKMenuItem *gameHelp_about;
-
 	CGTKSeparatorMenuItem *sep;
-
-
 }
 
 -(void)show;

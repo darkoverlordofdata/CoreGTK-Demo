@@ -1,15 +1,6 @@
 # CoreGTK Demo
 
-Gnustep is great! Up to a point. The gnustep ux is different. I prefer a native look.
-
-As an alternative, there is CoreGTK, a GTK wrapper adapter for Objective-C that gives your app a Gtk UX. It replaces AppKit. You'll also write some different code. But you still have Foundation, so your business logic should stay the same. 
-
-## What gui elements change?
-* no big icon. 
-* minimized windows appear in the desktop window menu.
-* menu integrates with the global menu bar.
-* same theme as the desktop.
-* correct icon appears on the dock.
+CoreGTK a GTK3 wrapper adapter for Objective-C.
 
 ## help
 make says 

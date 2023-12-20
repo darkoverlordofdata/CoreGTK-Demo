@@ -40,27 +40,25 @@
 
 
 		NSString *icon_path = [NSString stringWithFormat:@"%@/%@", 
-            [[NSBundle mainBundle] bundlePath], 
-            @"Resources/minesweeper.png"]; 
+            [[NSBundle mainBundle] bundlePath], @"Resources/minesweeper.png"]; 
 		[CGTKWindow setDefaultIconFromFileWithFilename:icon_path andErr:NULL];
 
 		app_box = [[CGTKBox alloc]initWithOrientation:GTK_ORIENTATION_VERTICAL andSpacing:0];
-
 		[window add:app_box];
 
 		menubar = [[CGTKMenuBar alloc]init];
 		[app_box packStartWithChild:menubar andExpand:FALSE andFill:FALSE andPadding:0];
 
-		gameMenu = [[CGTKMenu alloc]init];
-		gameMenu_game = [[CGTKMenuItem alloc]initWithLabel:@"Game"];
-		gameMenu_newGame = [[CGTKMenuItem alloc]initWithLabel:@"New Game"];
-		gameMenu_setup = [[CGTKMenuItem alloc]initWithLabel:@"Setup"];
-		gameMenu_options = [[CGTKMenuItem alloc]initWithLabel:@"Options"];
-		gameMenu_quit = [[CGTKMenuItem alloc]initWithLabel:@"Quit"];
+		gameMenu = 			[[CGTKMenu alloc]init];
+		gameMenu_game = 	[[CGTKMenuItem alloc]initWithLabel:@"Game"];
+		gameMenu_newGame = 	[[CGTKMenuItem alloc]initWithLabel:@"New Game"];
+		gameMenu_setup = 	[[CGTKMenuItem alloc]initWithLabel:@"Setup"];
+		gameMenu_options = 	[[CGTKMenuItem alloc]initWithLabel:@"Options"];
+		gameMenu_quit = 	[[CGTKMenuItem alloc]initWithLabel:@"Quit"];
 
-		gameHelp = [[CGTKMenu alloc]init];
-		gameHelp_help = [[CGTKMenuItem alloc]initWithLabel:@"Help"];
-		gameHelp_about = [[CGTKMenuItem alloc]initWithLabel:@"About"];
+		gameHelp = 			[[CGTKMenu alloc]init];
+		gameHelp_help = 	[[CGTKMenuItem alloc]initWithLabel:@"Help"];
+		gameHelp_about = 	[[CGTKMenuItem alloc]initWithLabel:@"About"];
 
 		sep = [[CGTKSeparatorMenuItem alloc]init];
 
@@ -74,6 +72,7 @@
 
 		[gameHelp_help setSubmenu:gameHelp];
 		[menubar append:gameHelp_help];
+		[gameHelp append:sep];
 		[gameHelp append:gameHelp_about];
 
 		[window showAll];
