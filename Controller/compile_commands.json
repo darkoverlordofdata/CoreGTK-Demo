@@ -47,12 +47,12 @@
       "-I/usr/local/GNUstep/System/Library/Headers",
       "-I/usr/local/include",
       "-o",
-      "obj/Menu.obj/Source/main.m.o",
-      "Source/main.m"
+      "obj/Controller.obj/main.m.o",
+      "main.m"
     ],
-    "directory": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Menu",
-    "file": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Menu/Source/main.m",
-    "output": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Menu/obj/Menu.obj/Source/main.m.o"
+    "directory": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Controller",
+    "file": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Controller/main.m",
+    "output": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Controller/obj/Controller.obj/main.m.o"
   },
   {
     "arguments": [
@@ -102,11 +102,66 @@
       "-I/usr/local/GNUstep/System/Library/Headers",
       "-I/usr/local/include",
       "-o",
-      "obj/Menu.obj/Source/Menu.m.o",
-      "Source/Menu.m"
+      "obj/Controller.obj/Controller.m.o",
+      "Controller.m"
     ],
-    "directory": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Menu",
-    "file": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Menu/Source/Menu.m",
-    "output": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Menu/obj/Menu.obj/Source/Menu.m.o"
+    "directory": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Controller",
+    "file": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Controller/Controller.m",
+    "output": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Controller/obj/Controller.obj/Controller.m.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-DGNUSTEP",
+      "-DGNUSTEP_BASE_LIBRARY=1",
+      "-DGNU_GUI_LIBRARY=1",
+      "-DGNUSTEP_RUNTIME=1",
+      "-D_NONFRAGILE_ABI=1",
+      "-DGNUSTEP_BASE_LIBRARY=1",
+      "-fno-strict-aliasing",
+      "-fexceptions",
+      "-fobjc-exceptions",
+      "-D_NATIVE_OBJC_EXCEPTIONS",
+      "-pthread",
+      "-fPIC",
+      "-Wall",
+      "-DGSWARN",
+      "-DGSDIAGNOSE",
+      "-Wno-import",
+      "-O2",
+      "-pipe",
+      "-fstack-protector-strong",
+      "-fno-strict-aliasing",
+      "-O2",
+      "-pipe",
+      "-fstack-protector-strong",
+      "-fno-strict-aliasing",
+      "-Wno-import",
+      "-I/usr/local/include",
+      "-I/usr/local/include/gtk-3.0",
+      "-I/usr/local/include/glib-2.0",
+      "-I/usr/local/lib/glib-2.0/include",
+      "-I/usr/local/include/pango-1.0",
+      "-I/usr/local/include/harfbuzz",
+      "-I/usr/local/include/cairo",
+      "-I/usr/local/include/gdk-pixbuf-2.0",
+      "-I/usr/local/include/atk-1.0",
+      "-I/usr/local/GNUstep/Local/Library/Frameworks/CoreGTK.framework/Headers",
+      "-fobjc-runtime=gnustep-2.0",
+      "-fblocks",
+      "-fconstant-string-class=NSConstantString",
+      "-I.",
+      "-I/home/darko/GNUstep/Library/Headers",
+      "-I/usr/local/GNUstep/Local/Library/Headers",
+      "-I/usr/local/GNUstep/System/Library/Headers",
+      "-I/usr/local/include",
+      "-o",
+      "obj/Controller.obj/Window.m.o",
+      "Window.m"
+    ],
+    "directory": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Controller",
+    "file": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Controller/Window.m",
+    "output": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Controller/obj/Controller.obj/Window.m.o"
   }
 ]

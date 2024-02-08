@@ -11,6 +11,19 @@ the plugin has some shortcomings:
 * menu NSMacintoshInterfaceStyle sits on top of top bar when the app has the focus , the theme still doesn't match.
 
 
+## what if?
+Given:
+
+the gtk theme holds a proxy gtk_window, with all control types instantiated. Then when it get's a request to
+draw an nsobject, it gets the theme info from the corresponding control on the proxy and uses that to draw.
+
+Then this internal proxy object could be further used to:
+create a GtkAppIcon
+create a GtkMenu 
+then we can disable the NSAppIcon and don't display an NSMenu
+
+the menu will either display in the app client window or publish to the global menu interface, like any Gtk application.
+
 
 ```c
 GtkWidget *box;

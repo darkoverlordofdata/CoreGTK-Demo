@@ -11,26 +11,26 @@ endif
 include $(GNUSTEP_MAKEFILES)/common.make
 
 #
-# Menu
+# Controller
 #
 VERSION = 1.0.0
-PACKAGE_NAME = Menu
-APP_NAME = Menu
-Menu_APPLICATION_ICON = Menu.png
+PACKAGE_NAME = Controller
+APP_NAME = Controller
+Controller_APPLICATION_ICON = Controller.png
 
 #
 # Resource files
 #
-Menu_RESOURCE_FILES = MenuInfo.plist \
-					Resources/minesweeper.png
+Controller_RESOURCE_FILES = ControllerInfo.plist  \
+			Resources/Application.png
 
 #
 # Class files
 #
-Menu_OBJC_FILES = Source/main.m Source/Menu.m 
+Controller_OBJC_FILES = main.m Controller.m Window.m
 
-OBJCFLAGS+= -std=c2x \
-			-I/usr/local/include/gtk-3.0 \
+
+OBJCFLAGS+= -I/usr/local/include/gtk-3.0 \
 			-I/usr/local/include/glib-2.0 \
 			-I/usr/local/lib/glib-2.0/include \
 			-I/usr/local/include/pango-1.0 \

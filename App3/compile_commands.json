@@ -47,12 +47,12 @@
       "-I/usr/local/GNUstep/System/Library/Headers",
       "-I/usr/local/include",
       "-o",
-      "obj/Menu.obj/Source/main.m.o",
+      "obj/App3.obj/Source/main.m.o",
       "Source/main.m"
     ],
-    "directory": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Menu",
-    "file": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Menu/Source/main.m",
-    "output": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Menu/obj/Menu.obj/Source/main.m.o"
+    "directory": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/App3",
+    "file": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/App3/Source/main.m",
+    "output": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/App3/obj/App3.obj/Source/main.m.o"
   },
   {
     "arguments": [
@@ -102,11 +102,11 @@
       "-I/usr/local/GNUstep/System/Library/Headers",
       "-I/usr/local/include",
       "-o",
-      "obj/Menu.obj/Source/Menu.m.o",
-      "Source/Menu.m"
+      "obj/App3.obj/Source/App3.m.o",
+      "Source/App3.m"
     ],
-    "directory": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Menu",
-    "file": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Menu/Source/Menu.m",
-    "output": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/Menu/obj/Menu.obj/Source/Menu.m.o"
+    "directory": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/App3",
+    "file": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/App3/Source/App3.m",
+    "output": "/usr/home/darko/Documents/GitHub/CoreGTK-Demo/App3/obj/App3.obj/Source/App3.m.o"
   }
 ]

@@ -2,16 +2,12 @@
 
 CoreGTK a GTK3 wrapper adapter for Objective-C.
 
-## help
-make says 
-```
-make: no target to make.
-```
-Are you on FreeBSD?
-```
-sudo pkg install gmake
-gmake
-```
+## why?
+Doesn't gnustep have it's own gui? Yes, but it's very .. stale. You can freshed up the theme, but there are still some usability issues. The menu fit with many desktops, and doesn't really work well. Screen minimization requires the huge icon in the corner. And they stack such that only the active gnustep app is visible this way. Modern desktops handle this with the window list and dock.
+
+CoreGTK fixes these issues, and works with the AppDelegate pattern. 
+
+
 
 ![alt App1](https://github.com/darkoverlordofdata/CoreGTK-Demo/blob/main/App1/2023-12-17-173931_204x130_scrot.png?raw=true)
 ```

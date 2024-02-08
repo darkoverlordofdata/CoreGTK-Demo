@@ -1,0 +1,17 @@
+{
+    ApplicationDescription = "Application Demo";
+    ApplicationIcon = "Application.png";
+    ApplicationName = Application;
+    ApplicationRelease = "1.0.0";
+    Authors = (
+	"darkoverlordofdata"
+    );
+    Copyright = "Copyright (C) 2023 LGPL";
+    CopyrightDescription = "GNU LESSER GENERAL PUBLIC LICENSE Version 2.1";
+    FullVersionID = "1.0.0";
+    NSExecutable = Application;
+    NSIcon = "Application.png";
+    NSPrincipalClass = NSApplication;
+    NSRole = Application;
+    URL = "http://darkoverlordofdata.com/application/";
+}

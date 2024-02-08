@@ -64,6 +64,7 @@
             [[NSBundle mainBundle] bundlePath], 
             @"Resources/SimpleTextEditor.png"]; 
 		[CGTKWindow setDefaultIconFromFileWithFilename:icon andErr:NULL];
+		// [(CGTKWindow*)window setKeepAbove:YES];
 	}
 	
 	return self;

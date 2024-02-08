@@ -24,6 +24,20 @@
 #import "Menu.h"
 
 @implementation Menu
+{
+  	CGTKButton *_button;
+  	CGTKLayout *_layout;
+
+}
+@synthesize window = _window;
+@synthesize gameMenuGame = _gameMenuGame;
+@synthesize gameMenuNewGame = _gameMenuNewGame;
+@synthesize gameMenuSetup = _gameMenuSetup;
+@synthesize gameMenuOptions = _gameMenuOptions;
+@synthesize gameMenuQuit = _gameMenuQuit;
+@synthesize gameHelp = _gameHelp;
+@synthesize gameHelpHelp = _gameHelpHelp;
+@synthesize gameHelpAbout = _gameHelpAbout;
 
 -(id)init
 {
@@ -31,74 +45,104 @@
 	
 	if(self)
 	{
-		window = [[CGTKWindow alloc]init:GTK_WINDOW_TOPLEVEL];
-		[CGTKSignalConnector connectGpointer:[window WIDGET] withSignal:@"destroy" 
+		_window = [[CGTKWindow alloc]init:GTK_WINDOW_TOPLEVEL];
+		[CGTKSignalConnector connectGpointer:[_window WIDGET] withSignal:@"destroy" 
 							toTarget:[CGTK class] withSelector:@selector(mainQuit) andData:NULL];
 
-		[window setTitle:@"Window"];
-		[window setDefaultSizeWithWidth:200 andHeight:100];
+		[_window setTitle:@"Window"];
+		[_window setDefaultSizeWithWidth:480 andHeight:360];
+		// [_window setSizeRequestWithWidth:480 andHeight:360];
 
 
 		NSString *icon_path = [NSString stringWithFormat:@"%@/%@", 
             [[NSBundle mainBundle] bundlePath], @"Resources/minesweeper.png"]; 
 		[CGTKWindow setDefaultIconFromFileWithFilename:icon_path andErr:NULL];
 
-		app_box = [[CGTKBox alloc]initWithOrientation:GTK_ORIENTATION_VERTICAL andSpacing:0];
-		[window add:app_box];
+		_layout = [[CGTKLayout alloc]initWithHadjustment:NULL andVadjustment:NULL];
+		_appBox = [[CGTKBox alloc]initWithOrientation:GTK_ORIENTATION_VERTICAL andSpacing:0];
+		[_window add:_layout];
+		[_layout add:_appBox];
 
-		menubar = [[CGTKMenuBar alloc]init];
-		[app_box packStartWithChild:menubar andExpand:FALSE andFill:FALSE andPadding:0];
+		_menubar = [[CGTKMenuBar alloc]init];
+		[_appBox packStartWithChild:_menubar andExpand:FALSE andFill:FALSE andPadding:0];
 
-		gameMenu = 			[[CGTKMenu alloc]init];
-		gameMenu_game = 	[[CGTKMenuItem alloc]initWithLabel:@"Game"];
-		gameMenu_newGame = 	[[CGTKMenuItem alloc]initWithLabel:@"New Game"];
-		gameMenu_setup = 	[[CGTKMenuItem alloc]initWithLabel:@"Setup"];
-		gameMenu_options = 	[[CGTKMenuItem alloc]initWithLabel:@"Options"];
-		gameMenu_quit = 	[[CGTKMenuItem alloc]initWithLabel:@"Quit"];
+		_gameMenu = 		[[CGTKMenu alloc]init];
+		_gameMenuGame = 	[[CGTKMenuItem alloc]initWithLabel:@"Game"];
+		_gameMenuNewGame = 	[[CGTKMenuItem alloc]initWithLabel:@"New Game"];
+		_gameMenuSetup = 	[[CGTKMenuItem alloc]initWithLabel:@"Setup"];
+		_gameMenuOptions = 	[[CGTKMenuItem alloc]initWithLabel:@"Options"];
+		_gameMenuQuit = 	[[CGTKMenuItem alloc]initWithLabel:@"Quit"];
 
-		gameHelp = 			[[CGTKMenu alloc]init];
-		gameHelp_help = 	[[CGTKMenuItem alloc]initWithLabel:@"Help"];
-		gameHelp_about = 	[[CGTKMenuItem alloc]initWithLabel:@"About"];
+		_gameHelp = 		[[CGTKMenu alloc]init];
+		_gameHelpHelp = 	[[CGTKMenuItem alloc]initWithLabel:@"Help"];
+		_gameHelpAbout = 	[[CGTKMenuItem alloc]initWithLabel:@"About"];
 
-		sep = [[CGTKSeparatorMenuItem alloc]init];
+		[_gameMenuGame setSubmenu:_gameMenu];
+		[_menubar append:_gameMenuGame];
+		[_gameMenu append:_gameMenuNewGame];
+		[_gameMenu append:_gameMenuSetup];
+		[_gameMenu append:_gameMenuOptions];
+		[_gameMenu append:[CGTKSeparatorMenuItem new]];
+		[_gameMenu append:_gameMenuQuit];
 
-		[gameMenu_game setSubmenu:gameMenu];
-		[menubar append:gameMenu_game];
-		[gameMenu append:gameMenu_newGame];
-		[gameMenu append:gameMenu_setup];
-		[gameMenu append:gameMenu_options];
-		[gameMenu append:sep];
-		[gameMenu append:gameMenu_quit];
+		[_gameHelpHelp setSubmenu:_gameHelp];
+		[_menubar append:_gameHelpHelp];
+		[_gameHelp append:[CGTKSeparatorMenuItem new]];
+		[_gameHelp append:_gameHelpAbout];
 
-		[gameHelp_help setSubmenu:gameHelp];
-		[menubar append:gameHelp_help];
-		[gameHelp append:sep];
-		[gameHelp append:gameHelp_about];
-
-		[window showAll];
+		[_window showAll];
     	// Signalhandlers
+		[_window setKeepAbove:YES];
+		
+		int width = 1920;
+		int height = 1080;
+		[_window setSizeRequestWithWidth:width andHeight:height];
+		[_window moveWithX:0 andY:0];
+		[_window fullscreen];
+		
+		_button = [[CGTKButton alloc]initWithLabel:@"Hello World!"];
+		[_layout add:(CGTKWidget*)_button];
 
-		[CGTKSignalConnector connectGpointer:[window WIDGET] withSignal:@"destroy" 
+				
+		[_button setName:@"backgroundImage"];
+		[_window setName:@"backgroundImage"];
+
+		
+
+		[CGTKSignalConnector connectGpointer:[_button WIDGET] withSignal:@"clicked" 
+							toTarget:self withSelector:@selector(print_hello) andData:NULL];
+
+		[CGTKSignalConnector connectGpointer:[_window WIDGET] withSignal:@"destroy" 
 							toTarget:self withSelector:@selector(gameQuit) andData:NULL];
 
-		[CGTKSignalConnector connectGpointer:[gameMenu_newGame WIDGET] withSignal:@"activate" 
+		[CGTKSignalConnector connectGpointer:[_gameMenuNewGame WIDGET] withSignal:@"activate" 
 							toTarget:self withSelector:@selector(newGame) andData:NULL];
-		[CGTKSignalConnector connectGpointer:[gameMenu_setup WIDGET] withSignal:@"activate" 
+		[CGTKSignalConnector connectGpointer:[_gameMenuSetup WIDGET] withSignal:@"activate" 
 							toTarget:self withSelector:@selector(openSetupDialog) andData:NULL];
-		[CGTKSignalConnector connectGpointer:[gameMenu_options WIDGET] withSignal:@"activate" 
+		[CGTKSignalConnector connectGpointer:[_gameMenuOptions WIDGET] withSignal:@"activate" 
 							toTarget:self withSelector:@selector(openOptionDialog) andData:NULL];
-		[CGTKSignalConnector connectGpointer:[gameMenu_quit WIDGET] withSignal:@"activate" 
+		[CGTKSignalConnector connectGpointer:[_gameMenuQuit WIDGET] withSignal:@"activate" 
 							toTarget:self withSelector:@selector(gameQuit) andData:NULL];
 
-		[CGTKSignalConnector connectGpointer:[gameHelp_about WIDGET] withSignal:@"activate" 
+		[CGTKSignalConnector connectGpointer:[_gameHelpAbout WIDGET] withSignal:@"activate" 
 							toTarget:self withSelector:@selector(gameAbout) andData:NULL];
 
-
+							
 
 	}
 	
 	return self;
 }
+
+
+-(void)print_hello
+{
+	NSLog(@"Hello World!");
+	NSLog(@"[*] quit game...");
+	[CGTK mainQuit];
+
+}
+
 
 
 -(void)newGame
@@ -143,7 +187,7 @@
 
 -(void)show
 {
-	[window showAll];
+	[_window showAll];
 }
 
 

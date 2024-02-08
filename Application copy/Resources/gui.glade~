@@ -34,6 +34,7 @@
                         <property name="can-focus">False</property>
                         <property name="use-underline">True</property>
                         <property name="use-stock">True</property>
+                        <signal name="activate" handler="btnNew_Clicked" swapped="no"/>
                       </object>
                     </child>
                     <child>
@@ -53,6 +54,7 @@
                         <property name="can-focus">False</property>
                         <property name="use-underline">True</property>
                         <property name="use-stock">True</property>
+                        <signal name="activate" handler="btnSaveClicked" swapped="no"/>
                       </object>
                     </child>
                     <child>
@@ -62,6 +64,7 @@
                         <property name="can-focus">False</property>
                         <property name="use-underline">True</property>
                         <property name="use-stock">True</property>
+                        <signal name="activate" handler="btnSaveAs_Clicked" swapped="no"/>
                       </object>
                     </child>
                     <child>
@@ -77,6 +80,7 @@
                         <property name="can-focus">False</property>
                         <property name="use-underline">True</property>
                         <property name="use-stock">True</property>
+                        <signal name="activate" handler="btnQuitClicked" swapped="no"/>
                       </object>
                     </child>
                   </object>
@@ -100,6 +104,7 @@
                         <property name="can-focus">False</property>
                         <property name="use-underline">True</property>
                         <property name="use-stock">True</property>
+                        <signal name="activate" handler="btnCut_Clicked" swapped="no"/>
                       </object>
                     </child>
                     <child>
@@ -109,6 +114,7 @@
                         <property name="can-focus">False</property>
                         <property name="use-underline">True</property>
                         <property name="use-stock">True</property>
+                        <signal name="activate" handler="btnCopy_Clicked" swapped="no"/>
                       </object>
                     </child>
                     <child>
@@ -118,6 +124,7 @@
                         <property name="can-focus">False</property>
                         <property name="use-underline">True</property>
                         <property name="use-stock">True</property>
+                        <signal name="activate" handler="btnPaste_Clicked" swapped="no"/>
                       </object>
                     </child>
                     <child>
@@ -127,6 +134,7 @@
                         <property name="can-focus">False</property>
                         <property name="use-underline">True</property>
                         <property name="use-stock">True</property>
+                        <signal name="activate" handler="btnDeleteClicked" swapped="no"/>
                       </object>
                     </child>
                   </object>
@@ -158,6 +166,7 @@
                         <property name="can-focus">False</property>
                         <property name="use-underline">True</property>
                         <property name="use-stock">True</property>
+                        <signal name="activate" handler="btnAbout_Clicked" swapped="no"/>
                       </object>
                     </child>
                   </object>

@@ -1,5 +1,5 @@
 /*
- * Menu.h
+ * main.m
  *
  * Copyright (C) 2023 darkoverlordofdata
  *
@@ -21,28 +21,20 @@
 /*
  * Objective-C imports
  */
+#import <Foundation/Foundation.h>
 #import <CoreGTK/CoreGTK.h>
-@interface Menu : NSObject
-@property (strong, nonatomic) CGTKWindow *window;
-@property (strong, nonatomic) CGTKMenuBar *menubar;
-@property (strong, nonatomic) CGTKBox *appBox;
-@property (strong, nonatomic) CGTKMenu *gameMenu;
-@property (strong, nonatomic) CGTKMenuItem *gameMenuGame;
-@property (strong, nonatomic) CGTKMenuItem *gameMenuNewGame;
-@property (strong, nonatomic) CGTKMenuItem *gameMenuSetup;
-@property (strong, nonatomic) CGTKMenuItem *gameMenuOptions;
-@property (strong, nonatomic) CGTKMenuItem *gameMenuQuit;
-@property (strong, nonatomic) CGTKMenu *gameHelp;
-@property (strong, nonatomic) CGTKMenuItem *gameHelpHelp;
-@property (strong, nonatomic) CGTKMenuItem *gameHelpAbout;
 
--(void)show;
-// Callbacks
--(void)newGame;
--(void)openSetupDialog;
--(void)openOptionDialog;
--(void)gameQuit;
--(void)gameAbout;
--(void)print_hello;
+#import "App3.h"
 
-@end
+int main(int argc, char *argv[])
+{	
+	@autoreleasepool {
+		[CGTK autoInitWithArgc:argc andArgv:argv];
+		
+		App3 *editor = [[App3 alloc] init];
+		[editor show];
+		[CGTK main];
+
+	}
+	return 0;
+}

@@ -44,6 +44,7 @@
                         <property name="use-underline">True</property>
                         <property name="use-stock">True</property>
                         <signal name="activate" handler="btnOpen_Clicked" swapped="no"/>
+                        <signal name="select" handler="btnOpen_Clicked" swapped="no"/>
                       </object>
                     </child>
                     <child>

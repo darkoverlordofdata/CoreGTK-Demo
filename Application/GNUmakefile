@@ -11,26 +11,29 @@ endif
 include $(GNUSTEP_MAKEFILES)/common.make
 
 #
-# Menu
+# Application
 #
 VERSION = 1.0.0
-PACKAGE_NAME = Menu
-APP_NAME = Menu
-Menu_APPLICATION_ICON = Menu.png
+PACKAGE_NAME = Application
+APP_NAME = Application
+Application_APPLICATION_ICON = Application.png
 
 #
 # Resource files
 #
-Menu_RESOURCE_FILES = MenuInfo.plist \
-					Resources/minesweeper.png
+Application_RESOURCE_FILES = ApplicationInfo.plist \
+									Resources/Application.glade \
+									Resources/Application.png
 
 #
 # Class files
 #
-Menu_OBJC_FILES = Source/main.m Source/Menu.m 
+Application_OBJC_FILES = Source/main.m \
+							Source/AppDelegate.m \
+							Source/SimpleTextEditor.m \
+							Source/MultiDialog.m
 
-OBJCFLAGS+= -std=c2x \
-			-I/usr/local/include/gtk-3.0 \
+OBJCFLAGS+= -I/usr/local/include/gtk-3.0 \
 			-I/usr/local/include/glib-2.0 \
 			-I/usr/local/lib/glib-2.0/include \
 			-I/usr/local/include/pango-1.0 \
